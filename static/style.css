@@ -1,0 +1,86 @@
+input[type=submit]{
+    background-color: #3547e9;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  .btn{
+    background-color: #3547e9;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    background-color: black;
+    color: white;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #7FFFD4;
+    text-align: center;
+  }
+  tr:nth-child(odd) {
+    background-color: white	;
+    text-align: center;
+  }
+        .database h2 {
+          text-align: center;
+            color: blue;
+            padding-bottom: 10px;
+        }
+
+        .database h3 {
+          text-align: center;
+            color: brown;
+            margin: 10px;
+        }
+
+        .database {
+            width: 100%;
+            /* margin: 20px;
+            padding: 20px; */
+        }
+/* body{
+  background-image: url("https://viewfinder.expedia.com/wp-content/uploads/2020/05/Zoom_Hawaii-1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+} */
+body{
+  background: url("https://ak.picdn.net/shutterstock/videos/12824204/thumb/1.jpg?ip=x480") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

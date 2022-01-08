@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Location Transparency</title>
+</head>
+
+<body>
+    {% block body %}
+
+    <h1 style="color: red;text-align: center;">Distributed Database Simulation</h1>
+    <div class="cite">
+        <div class="database">
+            <h2>Database {{1}}</h2>
+            {% for j in range(ntab[0])%}
+            <h3>{{tabnames[0][j]}}</h3>
+            <table class="center" id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        {% for col in allcolumn[0][j] %}
+                        <th scope="col">{{col}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tup in table[0][j] %}
+                    <tr>
+                        {% for ele in tup %}
+                        <td>{{ ele }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="database">
+            <h2>Database {{2}}</h2>
+            {% for j in range(ntab[1])%}
+
+            <h3>{{tabnames[1][j]}}</h3>
+            <table class="center" id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        {% for col in allcolumn[1][j] %}
+                        <th scope="col">{{col}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tup in table[1][j] %}
+                    <tr>
+                        {% for ele in tup %}
+                        <td>{{ ele }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="database">
+            <h2>Database {{3}}</h2>
+            {% for j in range(ntab[2])%}
+
+            <h3>{{tabnames[2][j]}}</h3>
+            <table class="center" id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        {% for col in allcolumn[2][j] %}
+                        <th scope="col">{{col}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tup in table[2][j] %}
+                    <tr>
+                        {% for ele in tup %}
+                        <td>{{ ele }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="container my-5" style="text-align: center;">
+            <form action="{{ url_for('insert') }}" method="POST">
+                <div class="form-group" style="padding-left: 10%;">
+                    <textarea style="font-size: 20px;font-weight: 500;width:90%;" type="text" name="query" id="query" class="form-control" rows="2"
+                        placeholder="Enter the query"></textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}
+
+</html>

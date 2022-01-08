@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+     <title>Location Transparency</title>
+</head>
+
+<body>
+    {% block body %}
+    {% if flag==1 %}
+    <div style="margin-left: 100px;">
+        <div class="alert alert-info col" role="alert" style="width: 800px; margin-left: 30px;">
+            Query Executed succefully!!
+          </div>
+        <table class="center" id="keywords" cellspacing="0" cellpadding="0" style="margin-top:10px">
+            <thead>
+                <tr>
+                    {% for i in range(col)%}
+                    <th scope="col">{{column[i]}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for tup in record %}
+                <tr>
+                    {% for ele in tup %}
+                    <td>{{ ele}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% elif flag==2 %}
+    <div class="alert alert-info col" role="alert" style="width: 800px; margin-left: 30px;">
+        Query Executed succefully!!
+      </div>
+      {% elif flag==3 %}
+    <div class="alert alert-danger" role="alert" style="width: 800px; margin-left: 30px;">
+        Connection Error !!
+      </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert" style="width: 800px; margin-left: 30px;">
+        Wrong Query Entered!!
+      </div>
+    {% endif %}
+    <a href="/">
+        <button type="button" class="btn" style="background-color: #3547e9;border: none; color: white;padding: 8px 12px; margin: 4px 2px;border-radius: 8px;font-size: 18px;">Back to Query Editor</button>
+    </a>
+</body>
+{% endblock %}
+
+</html>
